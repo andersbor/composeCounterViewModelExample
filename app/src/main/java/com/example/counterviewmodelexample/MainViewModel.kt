@@ -6,11 +6,8 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 
 class MainViewModel: ViewModel() {
-    // MutableState to handle our UI state
-    // TODO by??
     var counterState by mutableIntStateOf(0)
 
-    // Function to increment the counter
     fun incrementCounter() {
         counterState++
     }
