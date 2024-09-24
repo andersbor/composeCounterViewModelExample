@@ -10,7 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -26,8 +26,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             setContent {
                 MaterialTheme {
-                    Surface(color = MaterialTheme.colorScheme.background) {
-                        CounterScreen()
+                    Scaffold { innerPadding ->
+                        CounterScreen(modifier = Modifier.padding(innerPadding))
                     }
                 }
             }
@@ -35,28 +35,28 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-// https://www.phind.com/search?cache=s3kl4kl8922giemg0zy6b9wo
 @Composable
-fun CounterScreen(mainViewModel: MainViewModel = viewModel()) {
-    // UI that reacts to state changes
+fun CounterScreen(modifier: Modifier = Modifier) {
+    val counterViewModel: CounterViewModel = viewModel()
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .padding(16.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Counter: ${mainViewModel.counterState}")
-        Button(modifier = Modifier.width(200.dp),
-            onClick = { mainViewModel.incrementCounter() }) {
+        Text(text = "Counter: ${counterViewModel.counterState}")
+        Button(
+            modifier = Modifier.width(200.dp),
+            onClick = { counterViewModel.incrementCounter() }) {
             Text("Increment")
         }
-        Button(modifier = Modifier.width(200.dp),
-            onClick = { mainViewModel.decrementCounter() }) {
+        Button(
+            modifier = Modifier.width(200.dp),
+            onClick = { counterViewModel.decrementCounter() }) {
             Text("Decrement")
         }
-        Button(modifier = Modifier.width(200.dp),
-            onClick = { mainViewModel.resetCounter() }) {
+        Button(modifier = Modifier.width(200.dp), onClick = { counterViewModel.resetCounter() }) {
             Text("Reset")
         }
     }

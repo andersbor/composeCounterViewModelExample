@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 
-class MainViewModel: ViewModel() {
+class CounterViewModel: ViewModel() {
     var counterState by mutableIntStateOf(0)
 
     fun incrementCounter() {
