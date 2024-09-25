@@ -37,6 +37,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CounterScreen(modifier: Modifier = Modifier) {
+    // add to gradle file
+    // https://developer.android.com/develop/ui/compose/libraries#viewmodel
     val counterViewModel: CounterViewModel = viewModel()
     Column(
         modifier = modifier
