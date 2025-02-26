@@ -24,11 +24,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            setContent {
-                MaterialTheme {
-                    Scaffold { innerPadding ->
-                        CounterScreen(modifier = Modifier.padding(innerPadding))
-                    }
+            MaterialTheme {
+                Scaffold { innerPadding ->
+                    CounterScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
