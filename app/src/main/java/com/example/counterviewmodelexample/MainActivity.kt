@@ -34,10 +34,13 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun CounterScreen(modifier: Modifier = Modifier) {
+fun CounterScreen(
+    modifier: Modifier = Modifier,
+    counterViewModel: CounterViewModel = viewModel()
+) {
     // add to gradle file
     // https://developer.android.com/develop/ui/compose/libraries#viewmodel
-    val counterViewModel: CounterViewModel = viewModel()
+
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -64,7 +67,7 @@ fun CounterScreen(modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+private fun GreetingPreview() {
     CounterViewModelExampleTheme {
         CounterScreen()
     }

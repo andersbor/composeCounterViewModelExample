@@ -67,5 +67,5 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation(libs.androidx.lifecycle.viewmodel.compose) // OBS
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
 }
