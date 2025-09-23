@@ -59,7 +59,9 @@ fun CounterScreen(
             onClick = { counterViewModel.decrementCounter() }) {
             Text("Decrement")
         }
-        Button(modifier = Modifier.width(200.dp), onClick = { counterViewModel.resetCounter() }) {
+        Button(
+            modifier = Modifier.width(200.dp),
+            onClick = { counterViewModel.resetCounter() }) {
             Text("Reset")
         }
     }
