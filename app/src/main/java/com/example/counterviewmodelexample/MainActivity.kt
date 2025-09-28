@@ -33,6 +33,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+// implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.4")
+// at the bottom of the dependencies in the build.gradle.kts file (app)
 @Composable
 fun CounterScreen(
     modifier: Modifier = Modifier,
